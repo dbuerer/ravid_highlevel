@@ -1,0 +1,17 @@
+{
+	"name" : "ravid/ravid_highlevel",
+	"type" : "concrete5-package",
+	"require" : {		
+		
+	},
+	"description" : "RAVID Enterprises High Level Tools  - various tools to work with High Level compatible CRM systems",
+	"autoload" : {
+		"RavidTools\\": "src/"
+	},
+	"config" : {
+		"vendor-dir":"vendor",
+		"allow-plugins": {
+			"mlocati/composer-patcher": true
+		}		
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Concrete\Block\Content;
+namespace Concrete\Package\RavidHighlevel\Block\TriggerlinkLanding;
 
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Editor\LinkAbstractor;
@@ -22,64 +22,20 @@ use Concrete\Core\File\Tracker\RichTextExtractor;
  */
 class Controller extends BlockController implements FileTrackableInterface, UsesFeatureInterface
 {
-    /**
-     * @var string
-     */
+   
     public $content;
+    public $triggerlink;
 
-    /**
-     * @var string
-     */
     protected $btTable = 'btRavidHighLevelTriggerLink';
-
-    /**
-     * @var int
-     */
-    protected $btInterfaceWidth = 600;
-
-    /**
-     * @var int
-     */
-    protected $btInterfaceHeight = 465;
-
-    /**
-     * @var bool
-     */
+    protected $btInterfaceWidth = 800;
+    protected $btInterfaceHeight = 600;
     protected $btCacheBlockRecord = false;
-
-    /**
-     * @var bool
-     */
     protected $btCacheBlockOutput = false;
-
-    /**
-     * @var bool
-     */
     protected $btCacheBlockOutputOnPost = false;
-
-    /**
-     * @var bool
-     */
     protected $btSupportsInlineEdit = false;
-
-    /**
-     * @var bool
-     */
     protected $btSupportsInlineAdd = false;
-
-    /**
-     * @var bool
-     */
     protected $btCacheBlockOutputForRegisteredUsers = false;
-
-    /**
-     * @var bool
-     */
     protected $btCacheBlockOutputOnEditMode = false;
-
-    /**
-     * @var int
-     */
     protected $btCacheBlockOutputLifetime = 0; //until manually updated or cleared
 
     /**
@@ -160,8 +116,8 @@ class Controller extends BlockController implements FileTrackableInterface, Uses
         preg_match_all('/{{\w*}}/', $content, $arrFields);
 
         $keyvalue=[];
-        foreach($arrFields AS $thisKey){
-            $value=$_REQUEST[str_replace('{{','',str_replace('}}','',$thisKey))]??'{{!no match for $thisKey!}}';
+        foreach($arrFields[0] AS $thisKey){
+            $value=$_REQUEST[str_replace('{{','',str_replace('}}','',$thisKey))]??"!no match for field $thisKey!";
             $content=str_replace($thisKey,$value,$content);
         }
 

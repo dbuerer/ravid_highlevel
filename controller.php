@@ -21,7 +21,7 @@ class Controller extends Package
 	
 	protected $pkgHandle = 'ravid_highlevel';
 	protected $appVersionRequired = '9.0.0';
-	protected $pkgVersion = '0.0.1';
+	protected $pkgVersion = '0.1.0';
 	protected $pkgAllowsFullContentSwap = false;
 	protected $pkgAutoloaderRegistries = array(		
 		'src'=>'\RavidHighLevel'		

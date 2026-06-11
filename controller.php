@@ -31,7 +31,7 @@ class Controller extends Package
 	];	
 	
 	public function gitHubUser(){return 'dbuerer';} //used by ravid updater
-	public function gitHubRepository(){return 'ravid_highlevel';} //used by ravid updater
+	public function gitHubRepository(){return 'c5-ravid_highlevel';} //used by ravid updater
 
 		public function getPackageDescription(){
 	    return t('Tools used to work in concert with a High Level compatible CRM:
